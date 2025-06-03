@@ -17,27 +17,32 @@ while (userNumber <= 0 || userNumber > 5 || userNumber == NaN) {
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione)
 function randomNumber() {
     return Math.floor(Math.random() * 5) + 1;
-}
+}//inizializzo una funzione che crea un numero random da 1 a 5 
 const pcNumber = randomNumber(); //creiamo la costante generata dalla funzione
-alert(`Il computer ha estratto il numero ${pcNumber}`);//inizializzo una funzione che crea un numero random da 1 a 5 
+alert(`Il computer ha estratto il numero ${pcNumber}`);
 // Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) 
 function total(num1, num2) {
     return num1 + num2;
 } // inizializziamo una funzione di somma tra num1 e num2
-if (total(pcNumber, userNumber) % 2 === 0) {
+const totalConst = total(pcNumber, userNumber); // creo una costante per la funzione total
+
+if (totalConst % 2 === 0) {
     alert(`La somma dei numeri ${userNumber} e ${pcNumber} è pari`);
 } else {
     alert(`La somma dei numeri ${userNumber} e ${pcNumber} è dispari`);
 } // tramite un if/else, decretiamo se il numero è pari o dispari
 
+const userChoiceEven = (userChoice == 'pari'); //creo una costante per la scelta pari
+const userChoiceOdd = (userChoice == 'dispari'); //creo una costante per la scelta dispari
+
 // Dichiariamo chi ha vinto.
-if ((userChoice == 'pari') && (total(pcNumber, userNumber) % 2 === 0)) {
+if (userChoiceEven && (totalConst % 2 === 0)) {
     // pari e pari
     alert('Complimenti, hai vinto');
-} else if ((userChoice == 'pari') && (total(pcNumber, userNumber) % 2 === 1)) {
+} else if (userChoiceEven && (totalConst % 2 === 1)) {
     // pari e dispari
     alert('Mi dipiace, hai perso');
-} else if ((userChoice == 'dispari') && (total(pcNumber, userNumber) % 2 === 0)) {
+} else if (userChoiceOdd && (totalConst % 2 === 0)) {
     // dispari e pari
     alert('Mi dipiace, hai perso');
 } else {
