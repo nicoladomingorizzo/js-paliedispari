@@ -15,34 +15,24 @@ while (userNumber <= 0 || userNumber > 5 || userNumber == NaN) {
 } //creo un ciclo while per far si che il numero scelto dall'utente vada da 1 a 5
 
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione)
-function randomNumber() {
-    return Math.floor(Math.random() * 5) + 1;
-}//inizializzo una funzione che crea un numero random da 1 a 5 
+//inizializzo una funzione che crea un numero random da 1 a 5 
 const pcNumber = randomNumber(); //creiamo la costante generata dalla funzione
 alert(`Il computer ha estratto il numero ${pcNumber}`);
+
 // Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) 
-function total(num1, num2) {
-    return num1 + num2;
-} // inizializziamo una funzione di somma tra num1 e num2
-const totalConst = total(pcNumber, userNumber); // creo una costante per la funzione total
 
-if (totalConst % 2 === 0) {
-    alert(`La somma dei numeri ${userNumber} e ${pcNumber} è pari`);
-} else {
-    alert(`La somma dei numeri ${userNumber} e ${pcNumber} è dispari`);
-} // tramite un if/else, decretiamo se il numero è pari o dispari
-
+const oddOrEvenConst = oddOrEven(pcNumber, userNumber); // creo una costante per i numeri (pari o dispari)
 const userChoiceEven = (userChoice == 'pari'); //creo una costante per la scelta pari
 const userChoiceOdd = (userChoice == 'dispari'); //creo una costante per la scelta dispari
 
 // Dichiariamo chi ha vinto.
-if (userChoiceEven && (totalConst % 2 === 0)) {
+if (userChoiceEven && oddOrEvenConst) {
     // pari e pari
     alert('Complimenti, hai vinto');
-} else if (userChoiceEven && (totalConst % 2 === 1)) {
+} else if (userChoiceEven && oddOrEvenConst) {
     // pari e dispari
     alert('Mi dipiace, hai perso');
-} else if (userChoiceOdd && (totalConst % 2 === 0)) {
+} else if (userChoiceOdd && oddOrEvenConst) {
     // dispari e pari
     alert('Mi dipiace, hai perso');
 } else {
@@ -50,3 +40,23 @@ if (userChoiceEven && (totalConst % 2 === 0)) {
     alert('Complimenti, hai vinto');
 }
 // tramite un if/else, decretiamo se l'utente ha vinto o meno
+
+
+//Functions
+
+
+//function oddOrEven
+function oddOrEven(pcNum, userNum) {
+    let sum = pcNumber + userNumber;
+    if ((sum) % 2 === 0) {
+        alert(`La somma dei numeri ${userNumber} e ${pcNumber} è pari`);
+    } else {
+        alert(`La somma dei numeri ${userNumber} e ${pcNumber} è dispari`);
+    } // tramite un if/else, decretiamo se il numero è pari o dispari
+}
+
+
+//Function randomNumber
+function randomNumber() {
+    return Math.floor(Math.random() * 5) + 1;
+}
