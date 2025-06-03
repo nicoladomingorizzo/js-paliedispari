@@ -15,7 +15,6 @@ while (userNumber <= 0 || userNumber > 5 || userNumber == NaN) {
 } //creo un ciclo while per far si che il numero scelto dall'utente vada da 1 a 5
 
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione)
-//inizializzo una funzione che crea un numero random da 1 a 5 
 const pcNumber = randomNumber(); //creiamo la costante generata dalla funzione
 alert(`Il computer ha estratto il numero ${pcNumber}`);
 
@@ -60,3 +59,4 @@ function oddOrEven(pcNum, userNum) {
 function randomNumber() {
     return Math.floor(Math.random() * 5) + 1;
 }
+//inizializzo una funzione che crea un numero random da 1 a 5 
