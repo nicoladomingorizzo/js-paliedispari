@@ -20,22 +20,27 @@ alert(`Il computer ha estratto il numero ${pcNumber}`);
 
 // Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) 
 
-const oddOrEvenConst = oddOrEven(pcNumber, userNumber); // creo una costante per i numeri (pari o dispari)
+let even = (sum(pcNumber, userNumber) % 2 === 0); // creo una costante per i numeri pari
+let odd = (sum(pcNumber, userNumber) % 2 !== 0); // creo una costante per i numeri dispari
 const userChoiceEven = (userChoice == 'pari'); //creo una costante per la scelta pari
 const userChoiceOdd = (userChoice == 'dispari'); //creo una costante per la scelta dispari
 
 // Dichiariamo chi ha vinto.
-if (userChoiceEven && oddOrEvenConst) {
+if (userChoiceEven && even) {
     // pari e pari
+    alert(`La somma dei numeri ${userNumber} e ${pcNumber} è pari`)
     alert('Complimenti, hai vinto');
-} else if (userChoiceEven && oddOrEvenConst) {
+} else if (userChoiceEven && odd) {
     // pari e dispari
+    alert(`La somma dei numeri ${userNumber} e ${pcNumber} è dispari`)
     alert('Mi dipiace, hai perso');
-} else if (userChoiceOdd && oddOrEvenConst) {
+} else if (userChoiceOdd && even) {
     // dispari e pari
+    alert(`La somma dei numeri ${userNumber} e ${pcNumber} è pari`)
     alert('Mi dipiace, hai perso');
 } else {
     // dispari e dispari
+    alert(`La somma dei numeri ${userNumber} e ${pcNumber} è dispari`)
     alert('Complimenti, hai vinto');
 }
 // tramite un if/else, decretiamo se l'utente ha vinto o meno
@@ -45,13 +50,8 @@ if (userChoiceEven && oddOrEvenConst) {
 
 
 //function oddOrEven
-function oddOrEven(pcNum, userNum) {
-    let sum = pcNumber + userNumber;
-    if ((sum) % 2 === 0) {
-        alert(`La somma dei numeri ${userNumber} e ${pcNumber} è pari`);
-    } else {
-        alert(`La somma dei numeri ${userNumber} e ${pcNumber} è dispari`);
-    } // tramite un if/else, decretiamo se il numero è pari o dispari
+function sum(pcNum, userNum) {
+    return pcNumber + userNumber;
 }
 
 
