@@ -3,7 +3,7 @@
 //  L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 let userChoice = prompt('Scegli pari o dispari'); // creo un prompt per permettere all'utente di scegliere pari o dispari
 
-userChoice = userChoice.toLowerCase();
+userChoice = userChoice.toLowerCase(); // rendiamo la variabile case insensitive
 
 while ((userChoice != 'pari') && (userChoice != 'dispari')) {
     userChoice = prompt('Scegli pari o dispari');
