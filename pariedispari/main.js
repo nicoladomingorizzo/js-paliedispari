@@ -49,7 +49,7 @@ if (userChoiceEven && even) {
 //Functions
 
 
-//function oddOrEven
+//function sum
 function sum(pcNum, userNum) {
     return pcNumber + userNumber;
 }

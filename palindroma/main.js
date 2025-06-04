@@ -5,6 +5,7 @@ Chiedere all’utente di inserire una parola Creare una funzione per capire se l
 let userWord = prompt('Scrivi una parola'); //creo una variabile in cui inserisco un prompt
 userWord = userWord.toLowerCase(); //rendo una variabile case insensitive
 
+
 /**
  * Take a word and reverse it, also lower case
  * 
